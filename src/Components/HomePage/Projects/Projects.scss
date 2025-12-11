@@ -1,0 +1,479 @@
+@import "../../../index.scss";
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+    background: $black;
+    color: black;
+    padding: 100px 50px;
+    background: linear-gradient(
+        to bottom,
+        rgba(250, 248, 245, 0.9) 0%,    /* Continue from Services */
+        rgba(255, 253, 250, 0.95) 20%,  /* Pure soft white */
+        rgba(255, 255, 255, 1) 50%,      /* Clean white center */
+        rgba(255, 255, 255, 1) 80%,      /* Maintain white */
+        rgba(248, 249, 250, 0.98) 100%  /* Subtle gray-white - transition to ContactForm */
+      );
+    cursor: auto;
+    position: relative;
+
+    .head-section-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .head-div {
+            width: 50%;
+            color: $black;
+        }
+
+        .color {
+            color: $primary;
+        }
+
+        p {
+            width: 50%;
+            font-size: 18px;
+            color: $black;
+        }
+    }
+
+    // Responsive styles for heading
+    @media (max-width: 1024px) {
+        padding: 80px 40px;
+
+        .head-section-div {
+            flex-direction: column;
+            gap: 30px;
+            align-items: flex-start;
+
+            .head-div {
+                width: 100%;
+            }
+
+            p {
+                width: 100%;
+                font-size: 16px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 60px 30px;
+
+        .head-section-div {
+            gap: 25px;
+
+            .head-div {
+                .head-top {
+                    .top-title {
+                        font-size: 14px;
+                    }
+                }
+
+                .main-title {
+                    font-size: clamp(28px, 5vw, 40px);
+                }
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 50px 20px;
+
+        .head-section-div {
+            gap: 20px;
+
+            .head-div {
+                .head-top {
+                    .top-title {
+                        font-size: 12px;
+                    }
+                }
+
+                .main-title {
+                    font-size: 24px;
+                }
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+/* New simplified grid/card design */
+.project-section {
+    .project-container {
+        width: 100%;
+        max-width: 1200px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .projects-grid {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .project-card {
+        background: transparent;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.18);
+        }
+
+        .card-image {
+            position: relative;
+            width: 100%;
+            height: 320px; /* equal card height */
+            aspect-ratio: auto;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.6s ease;
+            }
+
+            .badge-service {
+                position: absolute;
+                top: 6px;
+                left: 12px;
+                z-index: 3;
+                padding: 0;
+                font-size: clamp(22px, 4.2vw, 46px);
+                font-weight: 900;
+                letter-spacing: .04em;
+                background: transparent;
+                color: rgba(255,255,255,0.95);
+                border: none;
+                border-radius: 0;
+                text-transform: uppercase;
+                line-height: 1;
+                text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+            }
+
+            .image-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to top, rgba(0,0,0,0.55) 8%, rgba(0,0,0,0.0) 55%);
+                z-index: 1;
+            }
+
+            /* Sliding blurred overlay (glass card, fixed ~60% height) */
+            .hover-overlay {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 70%;
+                transform: translateY(20px);
+                opacity: 0;
+                transition: transform 0.45s ease, opacity 0.45s ease;
+                z-index: 2;
+                border-radius: 18px;
+                background: rgba(40,40,40,0.35);
+                border: 1px solid rgba(255,255,255,0.18);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+
+                .hover-content {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    gap: 10px;
+                    padding: 18px;
+                    color: $black;
+
+                    .hover-head {
+                        display: flex;
+                        flex-direction: row; /* single row name left, location right */
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 8px;
+
+                        .hover-title {
+                            color: $white;
+                            font-size: 22px;
+                            font-weight: 800;
+                            line-height: 1.2;
+                        }
+
+                        .hover-location {
+                            font-size: 13px;
+                            padding: 6px 10px;
+                            border-radius: 999px;
+                            background: rgba(255,255,255,0.1);
+                            border: 1px solid rgba(255,255,255,0.18);
+                            backdrop-filter: blur(2px);
+                            color: $white;
+                        }
+                    }
+
+                    .hover-description {
+                        font-size: 14px;
+                        line-height: 1.5;
+                        color: rgba(255,255,255,0.92);
+                    }
+
+                    .learn-more-btn {
+                        align-self: flex-start;
+                        padding: 10px 14px;
+                        font-size: 13px;
+                        font-weight: 700;
+                        letter-spacing: .4px;
+                        color: $white;
+                        background: $primary;
+                        border: 1px solid rgba(255,255,255,0.25);
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: transform 0.2s ease, opacity 0.2s ease;
+
+                        &:hover {
+                            transform: translateY(-2px);
+                            opacity: .95;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        &:hover .hover-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        &:hover .hover-overlay {
+            transform: translateY(0%);
+        }
+    }
+
+    /* Featured card spans */
+    .card-wide {
+        grid-column: span 2;
+    }
+    .card-tall .card-image {
+        height: 420px;
+    }
+
+    @media (max-width: 1024px) {
+        .project-container {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            .card-image {
+                height: 280px;
+
+                .badge-service {
+                    font-size: clamp(18px, 3.5vw, 36px);
+                }
+
+                .hover-overlay {
+                    .hover-content {
+                        padding: 15px;
+
+                        .hover-head {
+                            .hover-title {
+                                font-size: 20px;
+                            }
+
+                            .hover-location {
+                                font-size: 12px;
+                                padding: 5px 8px;
+                            }
+                        }
+
+                        .hover-description {
+                            font-size: 13px;
+                        }
+
+                        .learn-more-btn {
+                            padding: 8px 12px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .card-tall .card-image {
+            height: 360px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .project-container {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .projects-grid {
+            gap: 16px;
+        }
+
+        .project-card {
+            .card-image {
+                height: 250px;
+            }
+        }
+
+        .card-tall .card-image {
+            height: 320px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .project-card {
+            .card-image {
+                height: 280px;
+
+                .badge-service {
+                    font-size: clamp(20px, 4vw, 32px);
+                }
+            }
+        }
+
+        .card-wide {
+            grid-column: span 1;
+        }
+
+        .card-tall .card-image {
+            height: 280px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .project-container {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .projects-grid {
+            gap: 16px;
+        }
+
+        .project-card {
+            .card-image {
+                height: 240px;
+
+                .badge-service {
+                    font-size: clamp(18px, 3.5vw, 28px);
+                    top: 4px;
+                    left: 10px;
+                }
+
+                .hover-overlay {
+                    .hover-content {
+                        padding: 12px;
+
+                        .hover-head {
+                            .hover-title {
+                                font-size: 18px;
+                            }
+
+                            .hover-location {
+                                font-size: 11px;
+                                padding: 4px 6px;
+                            }
+                        }
+
+                        .hover-description {
+                            font-size: 12px;
+                        }
+
+                        .learn-more-btn {
+                            padding: 6px 10px;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Custom Cursor Styles
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: $primary;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translate(-50%, -50%);
+    will-change: transform;
+    
+    &.cursor-hover {
+        width: 90px;
+        height: 90px;
+        padding: 5px;
+        background: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: $black;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        
+        &::before {
+            content: "Read More";
+        }
+    }
+    
+    &.cursor-expand {
+        width: 100px;
+        height: 100px;
+        background: $primary;
+        border: 2px solid $primary;
+    }
+}
+
+// Hide default cursor on project cards
+.project-card-1,
+.project-card-2 {
+    cursor: none;
+}

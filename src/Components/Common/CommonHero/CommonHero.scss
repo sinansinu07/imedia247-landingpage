@@ -1,0 +1,123 @@
+.common-hero {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: black;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        background-color: rgba(0, 0, 0, .3);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .hero-video {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero-image-div {
+        position: absolute;
+
+        width: 100%; /* wider to compensate for the rotation angle */
+        height: 100%;
+        background-color: #b1b1b1; /* placeholder grey background */
+        transform-origin: top left;
+        z-index: 0;
+    }
+    
+
+    .hero-image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .hero-content {
+        position: absolute;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* max-width: 1000px; */
+        z-index: 2;
+        left: 100px;
+        bottom: 100px;
+    }
+}
+  
+@keyframes moveCircle {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .common-hero .hero-content {
+      text-align: center;
+      padding-left: 30px;
+      padding-left: 30px;
+    }
+  
+    .common-hero .hero-content h1 {
+      font-size: 30px;
+    }
+    
+    .common-hero .scroll img {
+        width: 17px;
+    }
+    
+    .common-hero .scroll h1 {
+      max-width: fit-content;
+        font-size: 12px;
+    }
+  }
+  
+  
+  @media (max-width: 380px) {
+    .common-hero .hero-content h1 {
+      font-size: 22px;
+    }
+  }
+  
+  /* Adjustments for shorter viewports */
+  @media (max-height: 800px) {
+    .common-hero video {
+        height: 800px;
+    }
+  }
+  
+  @media (max-height: 700px) {
+    .common-hero video {
+        height: 700px;
+    }
+  }
+  
+  @media (max-height: 600px) {
+    .common-hero video {
+        height: 600px;
+    }
+  }

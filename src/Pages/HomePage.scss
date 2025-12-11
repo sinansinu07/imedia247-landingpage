@@ -1,0 +1,24 @@
+@import '../index.scss';
+
+.home-page {
+  /* Full-page background for the entire Home page */
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 249, 250, 1) 0%,        /* soft white top */
+    rgba(240, 240, 240, 1) 15%,       /* very light gray */
+    rgba(192, 152, 85, 0.12) 35%,     /* subtle brand glow */
+    rgba(173, 129, 77, 0.12) 55%,     /* subtle brand glow */
+    rgba(126, 82, 26, 0.10) 75%,      /* subtle brand depth */
+    rgba(248, 249, 250, 1) 100%       /* return to soft white */
+  );
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Neutralize section backgrounds so the page bg shows through */
+  .section-container {
+    background: transparent !important;
+  }
+}
+
+

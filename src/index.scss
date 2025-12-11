@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+// ===========================================
+// SIMPLE COLOR SYSTEM
+// ===========================================
+
+// Your Brand Colors
+$primary: #7E521A;      // Your main brand color
+$secondary: #C09855;     // Your secondary brand color
+$tertiary: #AD814D;     // Your tertiary brand color
+
+// Basic Colors
+$white: #ffffff;
+$black: #000000;
+$gray: #6c757d;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  // background: linear-gradient(
+  //   to bottom,
+  //   rgba(126, 82, 26, 0.9) 0%,     /* Dark golden top */
+  //   rgba(173, 129, 77, 0.7) 35%,   /* Deep gold mid-tone */
+  //   rgba(192, 152, 85, 0.45) 65%,  /* Warm mid-light gold */
+  //   rgba(240, 210, 140, 0.25) 85%, /* Soft light gold glow */
+  //   #F8E8C8 100%                   /* Very light golden base */
+  // );  
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  /* scroll-snap-type: y mandatory; */
+  scroll-behavior: smooth;
+  scroll-snap-type: none;
+}
+
+section{
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  transition: .5s;
+  color: $white;
+}
+
+a:hover {
+  transition: .5s;
+}
+
+button, input, textarea, select {
+  font-family: "Outfit", sans-serif;
+}
+
+.btn {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: .5s;
+  cursor: pointer;
+  border-radius: 50px;
+
+  svg {
+    transition: .5s;
+  }
+
+  &:hover {
+    transition: .5s;
+    // border: 2px solid #7E521A
+  }
+}
+
+.btn-primary {
+  color: $white;
+  background: $primary;
+  border: 2px solid $primary;
+
+  &:hover {
+    color: $primary;
+    background: $white;
+    transition: .5s;
+    border: 2px solid $primary;
+  }
+}
+
+.btn-secondary {
+  color: $primary;
+  background: $white;
+  border: 2px solid $primary;
+
+  &:hover {
+    color: $primary;
+    background: $white;
+    border: 2px solid $primary;
+    transition: .5s;
+  }
+}
+
+// ===========================================
+// SIMPLE UTILITY CLASSES
+// ===========================================
+
+// Text Colors
+.text-primary { color: $primary !important; }
+.text-secondary { color: $secondary !important; }
+.text-white { color: $white !important; }
+.text-black { color: $black !important; }
+.text-gray { color: $gray !important; }
+
+// Background Colors
+.bg-primary { background-color: $primary !important; }
+.bg-secondary { background-color: $secondary !important; }
+.bg-white { background-color: $white !important; }
+.bg-black { background-color: $black !important; }
+
+// Legacy color class (for backward compatibility)
+.color {
+  color: $primary;
+}
+
+.secondary-color {
+  color: $secondary;
+}
+
+.head-div {
+  .head-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    .head-top-hr {
+      width: 100px;
+      height: 2px;
+      background: $primary;
+      border: none;
+      margin-left: -100px;
+    }
+  
+    .top-title {
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .main-title {
+    margin-top: 10px;
+    font-size: 40px;
+    // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .main-description {
+    margin-top: 20px;
+    max-width: 700px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.section-container {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}

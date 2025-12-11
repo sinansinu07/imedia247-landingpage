@@ -1,0 +1,219 @@
+// EthosNova
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-Thin.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-ThinItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-Light.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-LightItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-Regular.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-Italic.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-Medium.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-MediumItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-Bold.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-BoldItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-Heavy.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-Heavy.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EthosNova';
+  src: url('./Assets/Fonts/EthosNovaFont/EthosNova-HeavyItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/EthosNovaFont/EthosNova-HeavyItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Helixa
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-Thin.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-ThinItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-Light.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-LightItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-Book.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-Book.woff') format('woff');
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-BookItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-BookItalic.woff') format('woff');
+  font-weight: 350;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-Regular.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-Italic.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-Bold.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-BoldItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-Black.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helixa';
+  src: url('./Assets/Fonts/HelixaFont/Helixa-BlackItalic.woff2') format('woff2'),
+       url('./Assets/Fonts/HelixaFont/Helixa-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

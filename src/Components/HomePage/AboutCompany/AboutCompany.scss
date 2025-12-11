@@ -1,0 +1,209 @@
+@import '../../../index.scss';
+
+.about-company-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 100px 50px;
+    background: linear-gradient(
+    to bottom,
+    rgba(126, 82, 26, 0.85) 0%,      /* Continue from HomeHero */
+    rgba(150, 105, 50, 0.9) 30%,     /* Rich bronze-gold */
+    rgba(173, 129, 77, 0.85) 60%,    /* Medium gold */
+    rgba(192, 152, 85, 0.8) 100%     /* Warm gold - transition to Services */
+    );
+
+    .head-div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        .about-company-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .btn {
+                width: 200px;
+                border: 2px solid $primary;
+            }
+
+            .btn:hover {
+                transition: .5s;
+            }
+        }
+    }
+
+    .stats-image-div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background: $white;
+        padding: 30px;
+        border-radius: 50px;
+
+        .stats-grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 50px;
+
+            .stats-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                span {
+                    font-size: 50px;
+                    font-weight: 800;
+                    color: $primary;
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+        }
+
+        .img-div {
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-bottom-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+            }
+        }
+    }
+}
+
+// Responsive design
+@media (max-width: 1024px) {
+    .about-company-section {
+        flex-direction: column;
+        gap: 40px;
+        padding: 80px 40px;
+
+        .head-div {
+            width: 100%;
+        }
+
+        .stats-image-div {
+            width: 100%;
+            padding: 25px;
+            border-radius: 30px;
+
+            .stats-grid {
+                gap: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about-company-section {
+        padding: 60px 30px;
+        gap: 30px;
+
+        .head-div {
+            .left {
+                .main-title {
+                    font-size: clamp(28px, 5vw, 40px);
+                }
+            }
+
+            .about-company-left {
+                .description {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .stats-image-div {
+            padding: 20px;
+            border-radius: 20px;
+
+            .stats-grid {
+                flex-direction: column;
+                gap: 20px;
+
+                .stats-item {
+                    span {
+                        font-size: 40px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .about-company-section {
+        padding: 50px 20px;
+        gap: 25px;
+
+        .head-div {
+            .left {
+                .head-top {
+                    .top-title {
+                        font-size: 14px;
+                    }
+                }
+
+                .main-title {
+                    font-size: 24px;
+                }
+            }
+
+            .about-company-left {
+                gap: 15px;
+
+                .description {
+                    font-size: 14px;
+                }
+
+                .btn {
+                    width: 100%;
+                    max-width: 200px;
+                }
+            }
+        }
+
+        .stats-image-div {
+            padding: 15px;
+            border-radius: 15px;
+
+            .stats-grid {
+                gap: 15px;
+
+                .stats-item {
+                    span {
+                        font-size: 32px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

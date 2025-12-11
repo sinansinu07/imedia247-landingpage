@@ -1,0 +1,307 @@
+@import '../../../index.scss';
+
+.Testimonials-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    background: linear-gradient(
+        to bottom,
+        rgba(248, 249, 250, 0.9) 0%,     /* Match Projects section end color */
+        #f8f9fa 10%,                      /* Transition to full white */
+        #e9ecef 60%,                      /* Light gray */
+        rgba(126, 82, 26, 0.9) 100%      /* Transition to dark brown for Process section */
+    );
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+
+    // Add decorative background elements
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 40%;
+        height: 200%;
+        background: radial-gradient(circle, rgba($primary, 0.1) 0%, transparent 70%);
+        animation: float 8s ease-in-out infinite;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        left: -10%;
+        width: 30%;
+        height: 160%;
+        background: radial-gradient(circle, rgba($secondary, 0.08) 0%, transparent 70%);
+        animation: float 6s ease-in-out infinite reverse;
+        z-index: 1;
+    }
+
+    .head-div {
+        width: 50%;
+        position: relative;
+        z-index: 2;
+
+        .btn {
+            width: 150px;
+            margin-top: 30px;
+        }
+    }
+
+    .Testimonials-container {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        position: relative;
+        z-index: 2;
+
+        .splide__track {
+            padding-bottom: 60px;
+            width: 100%;
+            max-width: 650px;
+        }
+          
+        .splide__slide {
+            display: flex;
+            flex-direction: column;
+            padding: 60px 50px;
+            gap: 30px;
+            background: $white;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba($primary, 0.1);
+
+            // Add quote icon
+            &::before {
+                content: '"';
+                position: absolute;
+                top: 30px;
+                right: 40px;
+                font-size: 80px;
+                color: rgba($primary, 0.1);
+                font-family: serif;
+                font-weight: bold;
+                line-height: 1;
+                z-index: 1;
+            }
+
+            // Add decorative gradient
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(90deg, $primary 0%, $secondary 100%);
+                z-index: 2;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.8;
+                color: #333;
+                font-style: italic;
+                position: relative;
+                z-index: 3;
+                margin: 0;
+                text-align: left;
+            }
+        }
+
+        .details {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 3;
+
+            img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid $primary;
+                box-shadow: 0 8px 25px rgba($primary, 0.2);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 12px 35px rgba($primary, 0.3);
+                }
+            }
+
+            .title-div {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .name {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: $primary;
+                    margin: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                .position {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $secondary;
+                    margin: 0;
+                    opacity: 0.8;
+                }
+            }
+        }
+         
+        .splide__pagination {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .splide__pagination__page {
+            height: 12px;
+            width: 12px;
+            opacity: 0.3;
+            background: $primary;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            margin: 0 8px;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        .splide__pagination__page.is-active {
+            background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+            opacity: 1;
+            transform: scale(1.3);
+        }
+          
+        .splide__arrow {
+            position: absolute;
+            background: $white;
+            border: 2px solid $primary;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+            color: $primary;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+          
+        .splide__arrow--prev {
+            top: 50%;
+            left: -60px;
+            transform: translateY(-50%);
+        }
+          
+        .splide__arrow--next {
+            top: 50%;
+            right: -60px;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+// Floating animation for decorative elements
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .Testimonials-section {
+        flex-direction: column;
+        gap: 50px;
+        padding: 60px 0;
+
+        .head-div {
+            width: 100%;
+            text-align: center;
+        }
+
+        .Testimonials-container {
+            width: 100%;
+            padding: 20px;
+
+            .splide__slide {
+                padding: 40px 30px;
+                gap: 20px;
+
+                p {
+                    font-size: 16px;
+                }
+            }
+
+            .details {
+                gap: 15px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .title-div {
+                    .name {
+                        font-size: 20px;
+                    }
+
+                    .position {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .splide__arrow {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .Testimonials-section {
+        .Testimonials-container {
+            .splide__slide {
+                padding: 30px 20px;
+
+                &::before {
+                    font-size: 60px;
+                    top: 20px;
+                    right: 20px;
+                }
+            }
+
+            .details {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+    }
+}
