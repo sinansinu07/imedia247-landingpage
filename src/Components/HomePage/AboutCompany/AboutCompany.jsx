@@ -100,7 +100,7 @@ export default function AboutCompany() {
                     <div ref={ref} className="stats-grid">
                         <div className="stats-item">
                             <span>
-                            {inView && <CountUp end={20} duration={2} />}+
+                            {inView && <CountUp end={40} duration={2} />}+
                             </span>
                             <p>Years of OOH Advertising Expertise</p>
                         </div>

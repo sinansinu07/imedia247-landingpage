@@ -7,11 +7,12 @@ import logoblack from "../../../Assets/Logo/imedia-logo.png"
 import { useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from "framer-motion"
 
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoMdCall } from "react-icons/io";
 import { BiLogIn } from "react-icons/bi";
-import { HiMenu, HiX } from "react-icons/hi";
+import { HiMenu, HiX, HiPhone } from "react-icons/hi";
 import { services } from '../../../Datasets/services'
 import { FlipLinkBtn } from '../../../Designs/FlipLink'
+import useIsMobile from '../../../Utils/useIsMobile'
 
 export default function Navbar(){
     const location = useLocation()
@@ -20,6 +21,7 @@ export default function Navbar(){
     // const [isProductsDropDownOpen, setIsProductsDropDownOpen] = useState(false)
     const [ isSticky, setIsSticky ] = useState(false)
     const [isHovered, setIsHovered] = useState(false);
+    const isMobile = useIsMobile(600);
 
     const [mobileMenu, setMobileMenu] = useState(false)
 
@@ -57,9 +59,6 @@ export default function Navbar(){
         <div className="logo-div">
             <a href="/"><img src={!isSticky ? logoblack : logowhite} alt="Logo" className="logo"/></a>
         </div>
-        <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
-            {mobileMenu ? <HiX /> : <HiMenu />}
-        </button>
         <div className={`nav-links-div ${mobileMenu ? "mobile-menu-open" : ""}`}>
             <ul className={`menu-bar ${mobileMenu ? "mobile-menu-open" : "hide-mobile-menu"}`}>
                 {/* <li><a href="/" className={location.pathname==="/" ? "" : ""}>Home</a></li> */}
@@ -69,15 +68,35 @@ export default function Navbar(){
                 {/* <li><a href="/" className={location.pathname==="/blogs" ? "" : ""}>Blog</a></li> */}
             </ul>
         </div>
-        <div className="button-div">
-            <a href="#contact-form" onClick={handleLinkClick}>
-                <div 
-                    className="btn btn-primary"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}>
-                    <FlipLinkBtn isHovered={isHovered}>Contact Us</FlipLinkBtn>
+        <div className="navbar-right">
+            {isMobile && (
+                <div className="button-div">
+                    <a href="#contact-form" onClick={handleLinkClick}>
+                        <div 
+                            className="btn btn-primary contact-icon-btn"
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                            aria-label="Contact Us">
+                            <IoMdCall />
+                        </div>
+                    </a>
                 </div>
-            </a>
+            )}
+            <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+                {mobileMenu ? <HiX /> : <HiMenu />}
+            </button>
+            {!isMobile && (
+                <div className="button-div">
+                    <a href="#contact-form" onClick={handleLinkClick}>
+                        <div 
+                            className="btn btn-primary"
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}>
+                            <FlipLinkBtn isHovered={isHovered}>Contact Us</FlipLinkBtn>
+                        </div>
+                    </a>
+                </div>
+            )}
         </div>
         </div>
     )

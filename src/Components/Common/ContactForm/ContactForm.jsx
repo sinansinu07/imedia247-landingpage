@@ -8,9 +8,18 @@ import Autocomplete from '@mui/material/Autocomplete';
 import InputAdornment from '@mui/material/InputAdornment';
 import { FlipLinkBtn } from "../../../Designs/FlipLink";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
+const PUBLIC_KEY = "PKoR53EHJAUqG_BLQ";
+const SERVICE_ID = "service_g654l6k";
+const TEMPLATE_ID = "template_yjvpxeq";
 
 export default function ContactForm() {
+    const navigate = useNavigate();
     const [isHovered, setIsHovered] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         fullName: '',
         countryCode: '+971',
@@ -22,15 +31,94 @@ export default function ContactForm() {
         recaptcha: false,
     });
     
+    const [formErrors, setFormErrors] = useState({});
+    
     const handleUpdate = (field) => (event) => {
         const inputValue = event.target.value;
         setFormData((prev) => ({ ...prev, [field]: inputValue }));
+        // Clear error when user starts typing
+        if (formErrors[field]) {
+            setFormErrors((prev) => ({ ...prev, [field]: '' }));
+        }
+    };
+    
+    const validateForm = () => {
+        const errors = {};
+        
+        if (formData?.fullName?.trim()?.length === 0) {
+            errors.fullName = "Full Name is Required";
+        }
+        
+        if (formData?.phone?.trim()?.length === 0) {
+            errors.phone = "Phone Number is Required";
+        }
+        
+        if (formData?.email?.trim()?.length === 0) {
+            errors.email = "Email is Required";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            errors.email = "Please enter a valid email address";
+        }
+        
+        if (formData?.message?.trim()?.length === 0) {
+            errors.message = "Message is Required";
+        }
+        
+        return errors;
+    };
+    
+    const sendContactFormEmail = async (formData) => {
+        const templateParams = {
+            name: formData.fullName,
+            phone: `${formData.countryCode} ${formData.phone}`,
+            email: formData.email,
+            userType: formData.userType,
+            company: formData.company || 'N/A',
+            message: formData.message,
+            time: new Date().toLocaleString(),
+        };
+
+        try {
+            setIsLoading(true);
+            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+            console.log("Email sent successfully!", response);
+            
+            toast.success("Thank you for your message! We'll get back to you soon.");
+            
+            // Reset form
+            setFormData({
+                fullName: '',
+                countryCode: '+971',
+                phone: '',
+                userType: 'Individual',
+                company: '',
+                email: '',
+                message: '',
+                recaptcha: false,
+            });
+            setFormErrors({});
+            
+            // Navigate to thank you page
+            navigate("/thank-you");
+        } catch (error) {
+            console.error("Email sending error:", error);
+            toast.error("Failed to send email. Please try again.");
+        } finally {
+            setIsLoading(false);
+        }
     };
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form Data:', formData);
-        // Add your submission logic here (e.g. send to API)
+        const errors = validateForm();
+        
+        if (Object.keys(errors).length === 0) {
+            // sendContactFormEmail(formData);
+            toast.success("Thank you for your message! We'll get back to you soon.");
+            navigate("/thank-you");
+        } else {
+            setFormErrors(errors);
+            toast.error("Please fill in all required fields correctly.");
+        }
     };
 
     const textVariants = {
@@ -106,7 +194,7 @@ export default function ContactForm() {
                             
                             <motion.div className="contact-item" variants={childVariants1}>
                                 <HiPhone className="contact-icon" />
-                                <a href="tel:+97143588855">+971 4 358 8855</a>
+                                <a href="tel:+971 42833471">+971 42833471</a>
                             </motion.div>
                             
                             <motion.div className="contact-item" variants={childVariants1}>
@@ -131,6 +219,9 @@ export default function ContactForm() {
                                     onChange={handleUpdate('fullName')}
                                     fullWidth
                                     className="form-field"
+                                    required
+                                    error={!!formErrors.fullName}
+                                    helperText={formErrors.fullName}
                                 />
                             </div>
 
@@ -151,6 +242,9 @@ export default function ContactForm() {
                                     onChange={handleUpdate('phone')}
                                     fullWidth
                                     className="form-field"
+                                    required
+                                    error={!!formErrors.phone}
+                                    helperText={formErrors.phone}
                                 />
                             </div>
 
@@ -186,6 +280,9 @@ export default function ContactForm() {
                                     onChange={handleUpdate('email')}
                                     fullWidth
                                     className="form-field"
+                                    required
+                                    error={!!formErrors.email}
+                                    helperText={formErrors.email}
                                 />
                             </div>
 
@@ -199,6 +296,9 @@ export default function ContactForm() {
                                     onChange={handleUpdate('message')}
                                     fullWidth
                                     className="form-field"
+                                    required
+                                    error={!!formErrors.message}
+                                    helperText={formErrors.message}
                                 />
                             </div>
 
@@ -225,8 +325,13 @@ export default function ContactForm() {
                                 className="btn btn-primary"
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
+                                disabled={isLoading}
                             >
-                                <FlipLinkBtn isHovered={isHovered}>Send</FlipLinkBtn>
+                                {isLoading ? (
+                                    "Sending..."
+                                ) : (
+                                    <FlipLinkBtn isHovered={isHovered}>Send</FlipLinkBtn>
+                                )}
                             </button>
                         </form>
                     </div>

@@ -1,5 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import AppLoader from './Components/AppLoader/AppLoader';
 import AppRouter from './Components/AppRouter/AppRouter';
 import routes from './routes/routes';
@@ -30,6 +32,18 @@ export default function App() {
             <Navbar />
             <AppRouter routes={routes} />
             <Footer />
+            <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
           </Fragment>
         )}
     </>

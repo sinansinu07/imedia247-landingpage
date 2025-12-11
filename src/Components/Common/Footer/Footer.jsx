@@ -16,8 +16,8 @@ export default function Footer() {
                         <p>IMedia leads the OOH and digital advertising industry across UAE & KSA, providing brands with maximum visibility through exclusive prime locations and 20+ years of expertise.</p>
                         <div className="details">
                             <h2>Our Location</h2>
-                            <p>Dubai, UAE</p>
-                            <p>Riyadh, KSA</p>
+                            <p>United Arab Emirates</p>
+                            <p>Saudi Arabia - KSA</p>
                         </div>
                     </div>
                 </div>
