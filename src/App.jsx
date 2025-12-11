@@ -20,7 +20,7 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, [location.pathname]);
 
-  // New Changes
+  // New Changes - 1
 
   return (
     <>
