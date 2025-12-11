@@ -11,7 +11,7 @@ import "./HomeHero.scss";
 // import video2 from "../../../Assets/Banners/3.jpg";
 // import video3 from "../../../Assets/Banners/2.jpg";
 // import video4 from "../../../Assets/Banners/4.jpg";
-import image from "../../../Assets/Banners/banner-image.webp"
+import image from "../../../Assets/Banners/bg-image.webp"
 import { FlipLinkBtn } from "../../../Designs/FlipLink";
 
 const services = [
