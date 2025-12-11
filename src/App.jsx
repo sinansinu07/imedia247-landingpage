@@ -20,6 +20,8 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, [location.pathname]);
 
+  // New Changes
+
   return (
     <>
       <AppLoader isVisible={pageLoading} />
