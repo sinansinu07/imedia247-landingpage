@@ -46,16 +46,16 @@ export default function Projects() {
         animate: { x: 0, opacity: 1, transition: { duration: 0.6 } },
     };
     const projects = [
-        { id: 1, image: project1, name: "Billboards", location: "Dubai", service: "Billboards", description: "Large‑format placements on key transit routes for maximum exposure. Built for long‑range readability with premium print quality, ensuring brand recall at peak traffic times." },
-        { id: 2, image: project2, name: "Digital", location: "Dubai Marina", service: "Digital", description: "Dynamic, data‑driven screens with precision targeting and real‑time content. Ideal for timely promos, day‑parting, and creative that adapts to audience and context." },
-        { id: 3, image: project3, name: "Bridge Banners", location: "SZR", service: "Bridge Banners", description: "High‑visibility bridge takeovers across major interchanges. Extended dwell time and wide viewing angles make them perfect for bold, iconic brand messaging." },
-        { id: 4, image: project4, name: "Airport", location: "DXB", service: "Airport", description: "Premium in‑terminal media reaching affluent travelers at key touchpoints. Strategically placed formats drive awareness from check‑in to boarding gates." },
-        { id: 5, image: project5, name: "Transport", location: "Dubai Metro", service: "Transport", description: "Full train wraps and station dominations deliver citywide ubiquity. High‑frequency exposure across commuter journeys amplifies consideration and recall." },
-        { id: 6, image: project6, name: "PDOOH", location: "Dubai", service: "PDOOH", description: "Programmatic OOH planned and optimized in real time. Use audience, location, and weather triggers to activate efficient buys with measurable outcomes." },
+        { id: 1, image: project1, name: "Hoardings", location: "Dubai", service: "Hoardings", description: "Large‑format hoarding displays strategically placed across Dubai for maximum brand visibility. Premium print quality ensures impactful messaging at high-traffic locations." },
+        { id: 2, image: project2, name: "Unipol", location: "Dubai", service: "Unipol", description: "Innovative unipole advertising structures providing 360-degree brand exposure. Perfect for high-visibility locations with premium positioning and modern design." },
+        { id: 3, image: project3, name: "Wall backlights", location: "Dubai", service: "Wall backlights", description: "Illuminated wall backlight displays that create stunning visual impact. LED technology ensures vibrant colors and clear messaging day and night." },
+        { id: 4, image: project4, name: "Glass Graphics", location: "Dubai", service: "Glass Graphics", description: "Premium glass graphics installations for sophisticated brand presentation. High-quality printing on glass surfaces creates elegant and modern advertising solutions." },
+        { id: 5, image: project5, name: "DOOH", location: "Dubai", service: "DOOH", description: "Digital Out-of-Home advertising with dynamic content capabilities. Real-time updates, interactive features, and data-driven targeting for maximum engagement." },
+        { id: 6, image: project6, name: "Hoardings", location: "KSA", service: "Hoardings", description: "Large‑format hoarding displays across Saudi Arabia for comprehensive brand reach. Strategically positioned to maximize visibility and impact in key markets." },
     ];
 
     return (
-        <section id="projects">
+        <section id="assets">
             <div className="project-section section-container">
                 <div className="head-section-div">
                     <div className="head-div">
@@ -63,7 +63,7 @@ export default function Projects() {
                             <motion.hr variants={childVariants} className="head-top-hr"/>
                             <motion.h3 variants={childVariants} className="top-title">What we have done</motion.h3>
                         </motion.div>
-                        <motion.h1 variants={textVariants1} initial="initial" whileInView="animate" className="main-title">Our <span className="color">Projects</span></motion.h1>
+                        <motion.h1 variants={textVariants1} initial="initial" whileInView="animate" className="main-title">Our <span className="color">Assets</span></motion.h1>
                     </div>
                     <motion.p variants={textVariants1} initial="initial" whileInView="animate">
                         We are proud to showcase our work and the results we have achieved for our clients.

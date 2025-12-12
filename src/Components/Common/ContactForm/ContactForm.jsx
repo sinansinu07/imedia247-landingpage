@@ -189,17 +189,17 @@ export default function ContactForm() {
                         <motion.div className="contact-details-list" variants={textVariants1} initial="initial" whileInView="animate">
                             <motion.div className="contact-item" variants={childVariants1}>
                                 <HiLocationMarker className="contact-icon" />
-                                <p>21st Floor, Festival Tower, Dubai Festival City. Dubai - United Arab Emirates.</p>
+                                <p>Jumeirah Business Center 5 - Office #305 - Cluster W - Dubai</p>
                             </motion.div>
                             
                             <motion.div className="contact-item" variants={childVariants1}>
                                 <HiPhone className="contact-icon" />
-                                <a href="tel:+971 42833471">+971 42833471</a>
+                                <a href="tel:+97142833471">+971 4 283 3471</a>
                             </motion.div>
                             
                             <motion.div className="contact-item" variants={childVariants1}>
                                 <HiMail className="contact-icon" />
-                                <a href="mailto:info@media247.ae">info@media247.ae</a>
+                                <a href="mailto:servicing@media247.ae">servicing@media247.ae</a>
                             </motion.div>
                         </motion.div>
                     </motion.div>

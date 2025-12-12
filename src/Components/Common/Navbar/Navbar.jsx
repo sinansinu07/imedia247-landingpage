@@ -64,7 +64,7 @@ export default function Navbar(){
                 {/* <li><a href="/" className={location.pathname==="/" ? "" : ""}>Home</a></li> */}
                 <li><a href="#about-us" onClick={handleLinkClick}>About Us</a></li>
                 <li><a href="#services" onClick={handleLinkClick}>Services</a></li>
-                <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
+                <li><a href="#assets" onClick={handleLinkClick}>Assets</a></li>
                 {/* <li><a href="/" className={location.pathname==="/blogs" ? "" : ""}>Blog</a></li> */}
             </ul>
         </div>

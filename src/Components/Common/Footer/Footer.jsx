@@ -13,7 +13,7 @@ export default function Footer() {
                 <div className="footer_col">
                     <div className="contact_content">
                         <img src={logo} className="logo" alt="" />
-                        <p>IMedia leads the OOH and digital advertising industry across UAE & KSA, providing brands with maximum visibility through exclusive prime locations and 20+ years of expertise.</p>
+                        <p>IMedia leads the outdoor advertising industry across UAE & KSA, providing brands with maximum visibility through exclusive prime locations and 20+ years of expertise.</p>
                         <div className="details">
                             <h2>Our Location</h2>
                             <p>United Arab Emirates</p>
@@ -26,13 +26,11 @@ export default function Footer() {
                     <div className="contact_details">
                         <div className="details">
                             <h2>Phone</h2>
-                            <p><a href="tel:+971501234567">+971 50 123 4567</a></p>
-                            <p><a href="tel:+966501234567">+966 50 123 4567</a></p>
+                            <p><a href="tel:+97142833471">+971 4 283 3471</a></p>
                         </div>
                         <div className="details">
                             <h2>Email</h2>
-                            <p><a href="mailto:info@imedia247.com">info@imedia247.com</a></p>
-                            <p><a href="mailto:support@imedia247.com">support@imedia247.com</a></p>
+                            <p><a href="mailto:servicing@media247.ae">servicing@media247.ae</a></p>
                         </div>
                         {/* <div className="details">
                             <h2>Working Hours</h2>
@@ -43,12 +41,10 @@ export default function Footer() {
                 <div className="footer_col">
                     <h1 className="head">Quick Links</h1>
                     <ul>
-                        <li><a className={location.pathname==="/" ? "active" : ""} href="/">Home</a></li>
-                        <li><a className={location.pathname==="/about-us" ? "active" : ""} href="/">About Us</a></li>
-                        <li><a className={location.pathname==="/services" ? "active" : ""} href="/">Services</a></li>
-                        <li><a className={location.pathname==="/assets" ? "active" : ""} href="/assets">Our Assets</a></li>
-                        <li><a className={location.pathname==="/blogs" ? "active" : ""} href="/">Blogs</a></li>
-                        <li><a className={location.pathname==="/contact-us" ? "active" : ""} href="">Contact</a></li>
+                        <li><a className={location.pathname==="/about-us" ? "active" : ""} href="#about-us">About Us</a></li>
+                        <li><a className={location.pathname==="/services" ? "active" : ""} href="#services">Services</a></li>
+                        <li><a className={location.pathname==="/assets" ? "active" : ""} href="#assets">Our Assets</a></li>
+                        <li><a className={location.pathname==="/contact-us" ? "active" : ""} href="#contact-form">Contact</a></li>
                     </ul>
                 </div>
                 <div className="footer_col">

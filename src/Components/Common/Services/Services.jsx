@@ -97,7 +97,7 @@ export default function Services() {
                                 <motion.h1 variants={childVariants1}>{selectedService.title}</motion.h1>
                                 <motion.p variants={childVariants1}>{selectedService.description}</motion.p>
                                 <motion.p variants={childVariants1}>{selectedService.description2}</motion.p>
-                                <motion.a variants={childVariants1} href={`/`}>
+                                <motion.a variants={childVariants1} href={`/#contact-form`}>
                                 <div className="btn" 
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
